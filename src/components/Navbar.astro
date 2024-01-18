@@ -1,4 +1,12 @@
+---
+import { Image } from 'astro:assets'
+import logo from '../gambar/logo.svg'
+---
 <nav>
+    <div class="logo_text">
+    <Image src={logo} alt='logo abs'></Image>
+    <h1>Artisan<span class="text-gradient"> Beverage Studio</span></h1>
+    </div>
     <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
@@ -7,7 +15,27 @@
 </nav>
 
 <style>
+    .logo_text {
+        display: flex;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-family: "Caveat";
+        color: #FF8011;
+        padding: 1rem;
+        margin: 0%;
+    }
+
+    nav {
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+    }
+
     ul {
+        font-family: sans-serif-;
         display: flex;
         margin: 0%;
         padding: 0%;
@@ -15,7 +43,7 @@
     }
 
     li {
-        padding: 2rem;
+        padding: 1rem;
     }
 
     a{
