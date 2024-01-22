@@ -2,6 +2,7 @@
 import Navbar from "../components/Navbar.astro";
 import Layout from '../layouts/Layout.astro';
 import Slider from "../components/Slider.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Artisan Beverage">
@@ -9,10 +10,31 @@ import Slider from "../components/Slider.astro";
 	<main>
 		<Slider></Slider>
 
-		<h2>Bento section</h2>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ad officiis, fugit facere iste tempore nihil consequatur repellat. Laudantium voluptatem veniam deleniti saepe aliquid harum vitae temporibus corrupti a nam?</p>
+		<div class="card-container">
+			<Card>
+				<p>ppp</p>
+			</Card>
+			<Card>
+				<p>ppp</p>
+			</Card>
+			<Card>
+				<p>ppp</p>
+			</Card>
+			<Card>
+				<p>ppp</p>
+			</Card>
+		</div>
 
 		<h2>Produk kami</h2>
 		<p>masukkan produk disini</p>
+		
 	</main>
 </Layout>
+
+<style>
+	.card-container{
+		display:grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+	}
+</style>
