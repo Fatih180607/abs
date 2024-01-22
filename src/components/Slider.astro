@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets'
+import logo from '../gambar/logo.svg'
+
+const placeholderImage = "https://picsum.photos/200/300"
+---
+
+<section class="slide">
+    <div class="image">
+        <Image class="mySlides2" src={placeholderImage} alt='logo abs' width="1000" height="400"></Image>
+        <Image class="mySlides2" src={placeholderImage} alt='logo abs' width="1000" height="400"></Image>
+        <Image class="mySlides2" src={placeholderImage} alt='logo abs' width="1000" height="400"></Image>
+    </div>
+    <div class="buttons">
+        <a class="slide-button prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="slide-button next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+</section>
+
+
+<script src="../slider-buat-js/slider.js"></script>
+
+<style>
+    .slide {
+        position: relative;
+    }
+    .image{
+        position: relative;
+        display: flex;
+    }
+
+    .buttons{
+      font-size: 30px;
+      color: white;
+    }
+
+    .slide-button {
+        position: absolute;
+        top: 50%;
+        padding: 1%;
+        transition: 0.5 ease;
+    }
+
+    .next {
+        right: 0;
+    }
+
+    .slide-button:hover{
+        background-color: rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+    }
+</style>
