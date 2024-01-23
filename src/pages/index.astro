@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar.astro";
 import Layout from '../layouts/Layout.astro';
 import Slider from "../components/Slider.astro";
 import Card from "../components/Card.astro";
+import Menu from "../components/menu.astro";
 ---
 
 <Layout title="Artisan Beverage">
@@ -24,18 +25,27 @@ import Card from "../components/Card.astro";
 				<p>ppp</p>
 			</Card>
 		</div>
-
-		<h2>Produk kami</h2>
-		<p>masukkan produk disini</p>
+		<div class="our">
+		<h2>Our Menu</h2>
+		</div>
+		
+		<Menu></Menu>
+	
 		
 	</main>
 </Layout>
 
 <style>
+	.our {
+		color: #FF8011;
+		text-align: center;
+	}
 	.card-container{
 		margin-top: 4rem;
+		padding-bottom: 4rem;
 		display:grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 1rem;
+		border-bottom: 3px solid #FF8011;
 	}
 </style>

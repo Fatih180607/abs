@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import gambar from "../gambar/fresh-coffee-steams-wooden-table-close-up-generative-ai_188544-8923.avif"
 import logo from '../gambar/logo.svg'
 
 const placeholderImage = "https://picsum.photos/200/300"
@@ -7,14 +8,19 @@ const placeholderImage = "https://picsum.photos/200/300"
 
 <section class="slide">
     <div class="image">
-        <Image class="mySlides2" src={placeholderImage} alt='logo abs' width="1000" height="400"></Image>
-        <Image class="mySlides2" src={placeholderImage} alt='logo abs' width="1000" height="400"></Image>
-        <Image class="mySlides2" src={placeholderImage} alt='logo abs' width="1000" height="400"></Image>
+        <Image class="mySlides fade" src={gambar} alt='logo abs' width="1000" height="400"></Image>
+        <Image class="mySlides fade" src={placeholderImage} alt='logo abs' width="1000" height="400"></Image>
+        <Image class="mySlides fade" src={placeholderImage} alt='logo abs' width="1000" height="400"></Image>
     </div>
     <div class="buttons">
         <a class="slide-button prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="slide-button next" onclick="plusSlides(1)">&#10095;</a>
     </div>
+    <div class="curent" style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
 </section>
 
 
@@ -27,15 +33,39 @@ const placeholderImage = "https://picsum.photos/200/300"
     .image{
         position: relative;
         display: flex;
+        justify-content: center;
     }
 
+    .curent {
+        margin-top: 1rem;
+    }
+    .fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+    }
+    @keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+    }
+
+    .dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
     .buttons{
       font-size: 30px;
-      color: white;
+      color:white;
     }
 
     .slide-button {
         position: absolute;
+        background-color: #FF8011;
         top: 50%;
         padding: 1%;
         transition: 0.5 ease;
@@ -46,7 +76,6 @@ const placeholderImage = "https://picsum.photos/200/300"
     }
 
     .slide-button:hover{
-        background-color: rgba(0, 0, 0, 0.5);
         cursor: pointer;
     }
 </style>
