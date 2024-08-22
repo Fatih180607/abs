@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets'
 import gambar from "../gambar/fresh-coffee-steams-wooden-table-close-up-generative-ai_188544-8923.avif"
+import biji from "../gambar/biji_kopi.jpg"
+import coffe from "../gambar/white-coffe.jpg"
 import logo from '../gambar/logo.svg'
 
 const placeholderImage = "https://picsum.photos/200/300"
@@ -9,18 +11,19 @@ const placeholderImage = "https://picsum.photos/200/300"
 <section class="slide">
     <div class="image">
         <Image class="mySlides fade" src={gambar} alt='logo abs' width="1000" height="400"></Image>
-        <Image class="mySlides fade" src={placeholderImage} alt='logo abs' width="1000" height="400"></Image>
-        <Image class="mySlides fade" src={placeholderImage} alt='logo abs' width="1000" height="400"></Image>
+        <Image class="mySlides fade" src={biji} alt='logo abs' width="1000" height="400"></Image>
+        <Image class="mySlides fade" src={coffe} alt='logo abs' width="1000" height="400"></Image>
+        <!-- <Image class="mySlides fade" src={placeholderImage} alt='logo abs' width="1000" height="400"></Image> -->
     </div>
     <div class="buttons">
-        <a class="slide-button prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="slide-button next" onclick="plusSlides(1)">&#10095;</a>
+        <a class="slide-button prev" >&#10094;</a>
+        <a class="slide-button next" >&#10095;</a>
     </div>
-    <div class="curent" style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span> 
-        <span class="dot" onclick="currentSlide(2)"></span> 
-        <span class="dot" onclick="currentSlide(3)"></span> 
-      </div>
+    <div class="dots" style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
 </section>
 
 
@@ -29,6 +32,8 @@ const placeholderImage = "https://picsum.photos/200/300"
 <style>
     .slide {
         position: relative;
+        margin-top: 4rem;
+        min-height: 80vh;
     }
     .image{
         position: relative;
@@ -48,16 +53,6 @@ const placeholderImage = "https://picsum.photos/200/300"
   to {opacity: 1}
     }
 
-    .dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
     .buttons{
       font-size: 30px;
       color:white;
@@ -66,7 +61,7 @@ const placeholderImage = "https://picsum.photos/200/300"
     .slide-button {
         position: absolute;
         background-color: #FF8011;
-        top: 50%;
+        top: 30%;
         padding: 1%;
         transition: 0.5 ease;
     }
@@ -78,4 +73,24 @@ const placeholderImage = "https://picsum.photos/200/300"
     .slide-button:hover{
         cursor: pointer;
     }
+
+    .dots {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
 </style>

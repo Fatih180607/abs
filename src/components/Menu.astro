@@ -1,16 +1,80 @@
 ---
+import { Image } from 'astro:assets'
 import foto from "../gambar/5e965a8c69592.jpg"
+import coffe from "../gambar/white-coffe.jpg"
 ---
 
 <ul>
   <div class="menu item">
-  <li>contoh menu</li>
+    
+  <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
+  <span class="title">White Coffe</span>
+  <div>
+    <button>buy</button>
+    </div>
   </div>
   <div class="menu item">
-  <li>contoh menu </li>
+    <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
+    <span class="title">White Coffe</span>
+    <div>
+      <button>buy</button>
+      </div>
   </div>
   <div class="menu item">
-  <li>contoh menu </li>
+    <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
+    <span class="title">White Coffe</span>
+    <div>
+      <button>buy</button>
+      </div>
+  </div>
+  <div class="menu item">
+    <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
+    <span class="title">White Coffe</span>
+    <div>
+      <button>buy</button>
+      </div>
+  </div>
+  <div class="menu item">
+    <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
+    <span class="title">White Coffe</span>
+    <div>
+      <button>buy</button>
+      </div>
+  </div>
+  <div class="menu item">
+    <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
+    <span class="title">White Coffe</span>
+    <div>
+      <button>buy</button>
+      </div>
+  </div>
+  <div class="menu item">
+    <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
+    <span class="title">White Coffe</span>
+    <div>
+      <button>buy</button>
+      </div>
+  </div>
+  <div class="menu item">
+    <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
+    <span class="title">White Coffe</span>
+    <div>
+      <button>buy</button>
+      </div>
+  </div>
+  <div class="menu item">
+    <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
+    <span class="title">White Coffe</span>
+    <div>
+      <button>buy</button>
+      </div>
+  </div>
+  <div class="menu item">
+    <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
+    <span class="title">White Coffe</span>
+    <div>
+    <button>buy</button>
+    </div>
   </div>
   
 </ul>
@@ -20,10 +84,17 @@ import foto from "../gambar/5e965a8c69592.jpg"
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(auto-fill,minmax(min(100%,30ch),1fr));
+    place-items: center;
+    justify-items: center;
+    margin: 0;
+    padding: 0;
+    
+    
   }
   li {
     list-style: none;
   }
+
 
   .menu{
     outline: 2px solid black;
