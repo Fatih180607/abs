@@ -2,13 +2,13 @@ let slideIndex = 1;
 showSlides(slideIndex);
 
 // Event listeners for buttons
-document.querySelector(".prev").addEventListener("click", () => {
-  plusSlides(-1);
-});
+// document.querySelector(".prev").addEventListener("click", () => {
+//   plusSlides(-1);
+// });
 
-document.querySelector(".next").addEventListener("click", () => {
-  plusSlides(1);
-});
+// document.querySelector(".next").addEventListener("click", () => {
+//   plusSlides(1);
+// });
 
 // Event listeners for dots
 const dots = document.querySelectorAll(".dot");

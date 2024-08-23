@@ -8,77 +8,41 @@ import coffe from "../gambar/white-coffe.jpg"
   <div class="menu item">
     
   <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
-  <span class="title">White Coffe</span>
-  <div>
-    <button>buy</button>
-    </div>
-  </div>
-  <div class="menu item">
-    <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
+  <div class="buy">
     <span class="title">White Coffe</span>
-    <div>
-      <button>buy</button>
+      <button id="myButton" class="btn">Buy Now</button>
       </div>
   </div>
   <div class="menu item">
     <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
-    <span class="title">White Coffe</span>
-    <div>
-      <button>buy</button>
-      </div>
+    <div class="buy">
+      <span class="title">White Coffe</span>
+      <button id="myButton" class="btn">Buy Now</button>
+        </div>
   </div>
   <div class="menu item">
     <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
-    <span class="title">White Coffe</span>
-    <div>
-      <button>buy</button>
-      </div>
+    <div class="buy">
+      <span class="title">White Coffe</span>
+      <button id="myButton" class="btn">Buy Now</button>
+        </div>
   </div>
   <div class="menu item">
     <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
-    <span class="title">White Coffe</span>
-    <div>
-      <button>buy</button>
-      </div>
+    <div class="buy">
+      <span class="title">White Coffe</span>
+      <button id="myButton" class="btn">Buy Now</button>
+        </div>
   </div>
   <div class="menu item">
     <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
+  <div class="buy">
     <span class="title">White Coffe</span>
-    <div>
-      <button>buy</button>
+    <button id="myButton" class="btn">Buy Now</button>
       </div>
   </div>
-  <div class="menu item">
-    <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
-    <span class="title">White Coffe</span>
-    <div>
-      <button>buy</button>
-      </div>
-  </div>
-  <div class="menu item">
-    <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
-    <span class="title">White Coffe</span>
-    <div>
-      <button>buy</button>
-      </div>
-  </div>
-  <div class="menu item">
-    <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
-    <span class="title">White Coffe</span>
-    <div>
-      <button>buy</button>
-      </div>
-  </div>
-  <div class="menu item">
-    <li><Image src={coffe} alt='logo abs' width="250" height="150"></Image></li>
-    <span class="title">White Coffe</span>
-    <div>
-    <button>buy</button>
-    </div>
-  </div>
-  
 </ul>
-
+<script src="../slider-buat-js/button.js"></script>
 <style>
   ul {
     display: grid;
@@ -89,7 +53,6 @@ import coffe from "../gambar/white-coffe.jpg"
     margin: 0;
     padding: 0;
     
-    
   }
   li {
     list-style: none;
@@ -98,5 +61,23 @@ import coffe from "../gambar/white-coffe.jpg"
 
   .menu{
     outline: 2px solid black;
+  }
+
+  button {
+    background-color: #FF8011;
+    border:none;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 8px;
+  }
+
+  .title{
+    text-align: center;
+    margin:5px 0 3px 0;
+  }
+
+  .buy{
+    display: flex;
+    flex-direction: column;
   }
 </style>

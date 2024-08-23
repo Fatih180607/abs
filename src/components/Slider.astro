@@ -15,10 +15,10 @@ const placeholderImage = "https://picsum.photos/200/300"
         <Image class="mySlides fade" src={coffe} alt='logo abs' width="1000" height="400"></Image>
         <!-- <Image class="mySlides fade" src={placeholderImage} alt='logo abs' width="1000" height="400"></Image> -->
     </div>
-    <div class="buttons">
+    <!-- <div class="buttons">
         <a class="slide-button prev" >&#10094;</a>
         <a class="slide-button next" >&#10095;</a>
-    </div>
+    </div> -->
     <div class="dots" style="text-align:center">
         <span class="dot"></span>
         <span class="dot"></span>
@@ -33,7 +33,6 @@ const placeholderImage = "https://picsum.photos/200/300"
     .slide {
         position: relative;
         margin-top: 4rem;
-        min-height: 80vh;
     }
     .image{
         position: relative;
@@ -43,14 +42,6 @@ const placeholderImage = "https://picsum.photos/200/300"
 
     .curent {
         margin-top: 1rem;
-    }
-    .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-    }
-    @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
     }
 
     .buttons{
