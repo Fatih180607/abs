@@ -1,49 +1,66 @@
 ---
 import { Image } from 'astro:assets'
 import coffe from "../gambar/white-coffe.jpg"
+import spageti from "../gambar/spageti.jpg"
+import rotbak from "../gambar/roti.jpg"
 ---
 <div class="filter">
   <input type="search" id="search" name="search" placeholder="Search...">
   <input type="submit">
   <div class="dropdown">
-    <button class="dropdown-btn"><i class="fa-solid fa-filter"></i></button>
+    <button class="dropdown-btn"><i class="fa-solid fa-filter"></i> Filter</button>
     <div class="dropdown-content">
-        <a href="#">Makanan</a>
-        <a href="#">Minuman</a>
-        <a href="#">Roti</a>
+      <a href="#" data-filter="makanan">Makanan</a>
+      <a href="#" data-filter="minuman">Minuman</a>
+      <a href="#" data-filter="roti">Roti</a>
     </div>
-</div>
+  </div>
 </div>
 <ul id="menu-list">
-  <div class="menu item" data-name="White Coffe">
+  <div class="menu item" data-category="minuman" data-name="White Coffe">
     <li><Image src={coffe} alt='White Coffee' width="250" height="150"></Image></li>
     <div class="buy">
       <span class="title">White Coffe</span>
       <button class="btn">Buy Now</button>
     </div>
   </div>
-  <div class="menu item" data-name="Moccacino">
+  <div class="menu item" data-category="minuman" data-name="Moccacino">
     <li><Image src={coffe} alt='Moccacino' width="250" height="150"></Image></li>
     <div class="buy">
       <span class="title">Moccacino</span>
       <button class="btn">Buy Now</button>
     </div>
   </div>
-  <div class="menu item" data-name="Cappucino">
+  <div class="menu item" data-category="minuman" data-name="Cappucino">
     <li><Image src={coffe} alt='Cappucino' width="250" height="150"></Image></li>
     <div class="buy">
       <span class="title">Cappucino</span>
       <button class="btn">Buy Now</button>
     </div>
   </div>
-  <div class="menu item" data-name="Americano">
+  <div class="menu item" data-category="minuman" data-name="Americano">
     <li><Image src={coffe} alt='Americano' width="250" height="150"></Image></li>
     <div class="buy">
       <span class="title">Americano</span>
       <button class="btn">Buy Now</button>
     </div>
   </div>
+  <div class="menu item" data-category="makanan" data-name="Spageti">
+    <li><Image src={spageti} alt='Spageti' width="250" height="150"></Image></li>
+    <div class="buy">
+      <span class="title">Spageti</span>
+      <button class="btn">Buy Now</button>
+    </div>
+  </div>
+  <div class="menu item" data-category="roti" data-name="roti">
+    <li><Image src={rotbak} alt='Spageti' width="250" height="150"></Image></li>
+    <div class="buy">
+      <span class="title">Roti</span>
+      <button class="btn">Buy Now</button>
+    </div>
+  </div>
 </ul>
+<p id="no-results" style="display:none; text-align:center; color:black;">Item tidak ditemukan</p>
 <script src="../slider-buat-js/search"></script>
 <style>
 .filter {

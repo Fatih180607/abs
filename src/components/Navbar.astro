@@ -7,13 +7,13 @@ import logo from '../gambar/logo.svg'
     <Image src={logo} alt='logo abs'></Image>
     <h1>Artisan<span class="text-gradient"> Beverage Studio</span></h1>
     </div>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/menu">Menu</a></li>
+    <ul id="navbar">
+        <li><a href="/#" id="home-link">Home</a></li>
+        <li><a href="/about" id="about-link">About</a></li>
+        <li><a href="/menu" id="menu-link">Menu</a></li>
     </ul>
 </nav>
-
+<script src="../slider-buat-js/components.js"></script>
 <style>
     .logo_text {
         display: flex;
@@ -51,4 +51,9 @@ import logo from '../gambar/logo.svg'
         color: #FF8011;
         text-decoration: none;
     }
+    .active {
+    color: black; 
+    font-weight: bold;
+    
+}
 </style>
