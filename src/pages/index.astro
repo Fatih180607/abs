@@ -5,6 +5,7 @@ import Slider from "../components/Slider.astro";
 import Card from "../components/Card.astro";
 import Menu from "../components/Content.astro";
 import Footer from "../components/Footer.astro";
+import supabase from "../config/supabaseClient";
 
 ---
 
@@ -39,7 +40,15 @@ import Footer from "../components/Footer.astro";
 	</main>
 </Layout>
 
-<style>
+<!-- <script>
+import {supabase} from "../config/supabaseClient";
+const Home = () => {
+	console.log(supabase)
+}
+export default Home
+</script> -->
+
+<style> 
 	.our {
 		display: flex;
 		flex-direction: row;

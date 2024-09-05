@@ -1,8 +1,6 @@
 import { defineConfig } from "astro/config";
 
-// https://astro.build/config
 export default defineConfig({
-  devToolbar: {
-    enabled: false,
-  },
+  // Astro configuration goes here
+  // Ensure no server URLs or properties are accessed here prematurely
 });
