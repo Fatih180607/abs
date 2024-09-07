@@ -4,10 +4,28 @@ import coffe from "../gambar/white-coffe.jpg"
 import spageti from "../gambar/spageti.jpg"
 import rotbak from "../gambar/roti.jpg"
 import {supabase} from "../lib/supabase"
+let menu = []
+  
 const menu_img= "https://xlxckzgmuxkijtcjmvee.supabase.co/storage/v1/object/public/Menu_abs"
-const { data, error } = await supabase
+const params = new URL(Astro.request.url)
+  .searchParams;
+  console.log (params.get("search"));
+  const seacrh_term = params.get("search");
+  // console.log(Astro.request.url);
+  if ( seacrh_term.length===0){
+    const { data, error } = await supabase
+    .from('menu')
+    .select()
+    menu=data
+  }
+  else {
+    const { data, error } = await supabase
   .from('menu')
   .select()
+  .textSearch("name", seacrh_term, {
+  });
+  menu=data
+  }
 ---
 <form class="filter" method="get">
   <input type="search" id="search" name="search" placeholder="Search...">
@@ -22,7 +40,7 @@ const { data, error } = await supabase
   </div>
 </form>
 <ul id="menu-list">
-  {data.map((item) => (
+  {menu.map((item) => (
     <div class="menu item" data-category="minuman" data-name="White Coffe">
     <li><Image src={menu_img+`/${item.type}/${item.id}.jpg`} alt='White Coffee' width="250" height="150"></Image></li>
     <li>{item.name}</li>
@@ -35,7 +53,6 @@ const { data, error } = await supabase
   
 </ul>
 <p id="no-results" style="display:none; text-align:center; color:black;">Item tidak ditemukan</p>
-<script src="../slider-buat-js/search"></script>
 <style>
 .filter {
   margin: 2rem 0 2rem 14px;
