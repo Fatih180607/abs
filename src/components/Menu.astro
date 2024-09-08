@@ -10,8 +10,8 @@ const menu_img= "https://xlxckzgmuxkijtcjmvee.supabase.co/storage/v1/object/publ
 const params = new URL(Astro.request.url)
   .searchParams;
   console.log (params.get("search"));
-  const seacrh_term = params.get("search");
-  // console.log(Astro.request.url);
+  const seacrh_term = params.get("search") ||"";
+
   if ( seacrh_term.length===0){
     const { data, error } = await supabase
     .from('menu')
