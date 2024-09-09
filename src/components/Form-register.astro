@@ -5,8 +5,8 @@ import Cat from "../gambar/cat.png"
 <section class="main-section max-w-4xl mx-auto">
   <Image src={Cat} alt='logo abs'></Image>
   <div class="heading">
-  <h1>Sign</h1>
-  <p>in</p>
+  <h1>Regis</h1>
+  <p>ter</p>
   </div>
   <form class="login" action="api/auth/register" method="POST">
     <label for="email">email</label>
@@ -32,42 +32,55 @@ import Cat from "../gambar/cat.png"
 </Layout>
 
 <style>
-.heading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-
-.heading p,h1 {
-  margin: 0;
-  font-size: 30px;
-}
-
-.heading p {
-  font-weight: 400;
-}
-
-h1 {
-  color:#FF8011;
-  font-weight: 600;
-}
-
-.login {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  margin: auto;
-  width: 20%;
-}
-
-.login input {
-  padding: 5px;
-  margin-top: 5px;
-}
-
-.login label {
-  margin-top: 1rem;
-}
-</style>
+  .heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  .heading p,h1 {
+    margin: 0;
+    font-size: 30px;
+  }
+  
+  .heading p {
+    font-weight: 400;
+  }
+  
+  h1 {
+    color:#FF8011;
+    font-weight: 600;
+  }
+  
+  .login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    margin-top:1rem;
+    width: 20%;
+    border: 2px solid;
+    padding: 2rem;
+  }
+  
+  .login input {
+    padding: 5px;
+    margin-top: 5px;
+  }
+  
+  .login label {
+    margin-top: 1rem;
+  }
+  
+  .login button {
+    margin-top: 1rem;
+    padding: 3px;
+    background-color: #FF8011;
+    color: #ffffff;
+    font-weight: 500;
+    border: 1px solid black;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.6));
+  }
+  </style>

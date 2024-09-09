@@ -8,7 +8,7 @@ import Cat from "../gambar/cat.png"
   <h1>Sign</h1>
   <p>in</p>
   </div>
-  <form class="login" action="api/auth/sign-ins" method="POST">
+  <form class="login" action="api/auth/sign-in" method="POST">
     <label for="email">email</label>
     <input
       type="email"
@@ -59,7 +59,10 @@ h1 {
   justify-content: center;
   text-align: center;
   margin: auto;
+  margin-top:1rem;
   width: 20%;
+  border: 2px solid;
+  padding: 2rem;
 }
 
 .login input {
@@ -69,5 +72,15 @@ h1 {
 
 .login label {
   margin-top: 1rem;
+}
+
+.login button {
+  margin-top: 1rem;
+  padding: 3px;
+  background-color: #FF8011;
+  color: #ffffff;
+  font-weight: 500;
+  border: 1px solid black;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.6));
 }
 </style>

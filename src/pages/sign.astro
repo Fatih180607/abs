@@ -3,6 +3,15 @@ import {supabase} from "../lib/supabase";
 import Layout from "../layouts/Layout.astro";
 import Form from "../components/Form-sign.astro";
 
+const { cookies, redirect } = Astro;
+
+const accessToken = cookies.get("sb-access-token");
+const refreshToken = cookies.get("sb-refresh-token");
+
+if (accessToken && refreshToken) {
+  return redirect("/#");
+}
+
 ---
 <Layout title="Artisan Beverage">
   <Form></Form>
