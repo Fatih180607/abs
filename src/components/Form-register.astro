@@ -1,0 +1,73 @@
+---
+import { Image } from 'astro:assets'
+import Cat from "../gambar/cat.png"
+---
+<section class="main-section max-w-4xl mx-auto">
+  <Image src={Cat} alt='logo abs'></Image>
+  <div class="heading">
+  <h1>Sign</h1>
+  <p>in</p>
+  </div>
+  <form class="login" action="api/auth/register" method="POST">
+    <label for="email">email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="youremail@gmail.com"
+      required
+    />
+    <label for="name">Password</label>
+    <input
+      type="password"
+      id="email"
+      name="password"
+      placeholder="your super secret password"
+      required
+    />
+    <button>submit</button>
+    <p>don't have an account? <a href="/register">register instead</a></p>
+  </form>
+</section>
+</Layout>
+
+<style>
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.heading p,h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.heading p {
+  font-weight: 400;
+}
+
+h1 {
+  color:#FF8011;
+  font-weight: 600;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  width: 20%;
+}
+
+.login input {
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.login label {
+  margin-top: 1rem;
+}
+</style>
