@@ -52,7 +52,7 @@ const params = new URL(Astro.request.url)
   ))}
   
 </ul>
-<p id="no-results" style="display:none; text-align:center; color:black;">Item tidak ditemukan</p>
+<p id="no-results" style="display:none; text-align:center; color:#fff;">Item tidak ditemukan</p>
 <style>
 .filter {
   margin: 2rem 0 2rem 14px;
@@ -114,10 +114,12 @@ ul {
 
 li {
   list-style: none;
+  color:#fff;
+  padding: 5px;
 }
 
 .menu {
-  outline: 2px solid black;
+  outline: 2px solid #ffffff;
 }
 
 button {

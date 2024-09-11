@@ -11,6 +11,7 @@ import logo from '../gambar/logo.svg'
         <li><a href="/#" id="home-link">Home</a></li>
         <li><a href="/about" id="about-link">About</a></li>
         <li><a href="/menu" id="menu-link">Menu</a></li>
+        <li><button id="submit">LogOut</button></li>
     </ul>
 </nav>
 <script src="../slider-buat-js/components.js"></script>
@@ -36,7 +37,8 @@ import logo from '../gambar/logo.svg'
         border-bottom: 1px solid;
         top:0;
         position: sticky;
-        background-color: #ffffff;
+        background-color: rgba(17,17,17,0.75);
+        ;
         box-shadow: 2px 2px 3px 2px rgba(0,0,0,0.3);
         z-index: 3;
     }
@@ -58,9 +60,14 @@ import logo from '../gambar/logo.svg'
         color: #FF8011;
         text-decoration: none;
     }
+
+    a:hover {
+    text-shadow: 0 0 10px #69e0ff,0 0 20px #69e0ff,0 0 40px #69e0ff;
+    color: #fff;
+    }
+
     .active {
-    color: black; 
-    font-weight: bold;
-    
-}
+        text-shadow: 0 0 10px #69e0ff,0 0 20px #69e0ff,0 0 40px #69e0ff;
+        color: #fff;   
+    }
 </style>
