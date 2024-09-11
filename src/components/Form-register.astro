@@ -1,14 +1,15 @@
 ---
 import { Image } from 'astro:assets'
-import Cat from "../gambar/cat.png"
+import Bg from "../gambar/post-form.jpg"
 ---
 <section class="main-section max-w-4xl mx-auto">
-  <Image src={Cat} alt='logo abs'></Image>
+  <!-- <Image src={Cat} alt='logo abs'></Image> -->
   <div class="heading">
-  <h1>Regis</h1>
-  <p>ter</p>
+  <h1>Welcome</h1>
   </div>
-  <form class="login" action="api/auth/register" method="POST">
+  <div class="header">
+ <img src="/src/gambar/post-form.jpg" alt="poster" class="poster">
+  <form class="login" action="api/auth/sign-in" method="POST">
     <label for="email">email</label>
     <input
       type="email"
@@ -26,61 +27,76 @@ import Cat from "../gambar/cat.png"
       required
     />
     <button>submit</button>
-    <p>don't have an account? <a href="/register">register instead</a></p>
+    <p>Already have an account? <a href="/sign">sign in instead</a></p>
   </form>
+  </div>
 </section>
-</Layout>
 
 <style>
-  .heading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-  }
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.heading p,h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.heading p {
+  font-weight: 400;
+  color: #ffffff;
+}
+
+h1 {
+  color:#FF8011;
+  text-shadow: 1px 1px 2px #d2cfcf;
+  font-weight: 600;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.poster {
+  width: 450px;
+  height: 500px;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;;
+  width: 20%;
+  padding: 3rem;
+  background-color: #ffffff;
+  border: 2px solid black;
+  box-shadow: 1px 4px 8px 1px;
+}
+
+.login input {
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.login label {
+  margin-top: 1rem;
+}
+
+.login button {
+  margin-top: 1rem;
+  padding: 3px;
+  background-color: #FF8011;
+  color: #ffffff;
+  font-weight: 500;
+  border: 1px solid black;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.6));
+}
+</style>
   
-  .heading p,h1 {
-    margin: 0;
-    font-size: 30px;
-  }
-  
-  .heading p {
-    font-weight: 400;
-  }
-  
-  h1 {
-    color:#FF8011;
-    font-weight: 600;
-  }
-  
-  .login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin: auto;
-    margin-top:1rem;
-    width: 20%;
-    border: 2px solid;
-    padding: 2rem;
-  }
-  
-  .login input {
-    padding: 5px;
-    margin-top: 5px;
-  }
-  
-  .login label {
-    margin-top: 1rem;
-  }
-  
-  .login button {
-    margin-top: 1rem;
-    padding: 3px;
-    background-color: #FF8011;
-    color: #ffffff;
-    font-weight: 500;
-    border: 1px solid black;
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.6));
-  }
-  </style>

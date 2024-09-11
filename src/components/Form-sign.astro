@@ -1,13 +1,15 @@
 ---
 import { Image } from 'astro:assets'
-import Cat from "../gambar/cat.png"
+import Bg from "../gambar/post-form.jpg"
 ---
 <section class="main-section max-w-4xl mx-auto">
-  <Image src={Cat} alt='logo abs'></Image>
+  <!-- <Image src={Cat} alt='logo abs'></Image> -->
   <div class="heading">
   <h1>Sign</h1>
-  <p>in</p>
+  <p>In</p>
   </div>
+  <div class="header">
+ <img src="/src/gambar/post-form.jpg" alt="poster" class="poster">
   <form class="login" action="api/auth/sign-in" method="POST">
     <label for="email">email</label>
     <input
@@ -28,10 +30,11 @@ import Cat from "../gambar/cat.png"
     <button>submit</button>
     <p>don't have an account? <a href="/register">register instead</a></p>
   </form>
+  </div>
 </section>
-</Layout>
 
 <style>
+
 .heading {
   display: flex;
   align-items: center;
@@ -42,10 +45,12 @@ import Cat from "../gambar/cat.png"
 .heading p,h1 {
   margin: 0;
   font-size: 30px;
+  text-shadow: 1px 1px 2px #d2cfcf;
 }
 
 .heading p {
   font-weight: 400;
+  color: #ffffff;
 }
 
 h1 {
@@ -53,16 +58,27 @@ h1 {
   font-weight: 600;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.poster {
+  width: 450px;
+  height: 500px;
+}
+
 .login {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
-  margin: auto;
-  margin-top:1rem;
+  text-align: center;;
   width: 20%;
-  border: 2px solid;
-  padding: 2rem;
+  padding: 3rem;
+  background-color: #ffffff;
+  border: 2px solid black;
+  box-shadow: 1px 4px 8px 1px;
 }
 
 .login input {
@@ -72,6 +88,9 @@ h1 {
 
 .login label {
   margin-top: 1rem;
+  font-weight: 500;
+  font-size: 17px;
+  text-transform:capitalize;
 }
 
 .login button {

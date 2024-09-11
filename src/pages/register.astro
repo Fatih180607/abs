@@ -4,6 +4,25 @@ import Layout from "../layouts/Layout.astro";
 import Form from "../components/Form-register.astro";
 
 ---
-<Layout title="Artisan Beverage">
-  <Form></Form>
-</Layout>
+<!doctype html>
+<html lang="en">
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Artisan Beverage</title>
+	</head>
+	<body style="background-image: url(/src/gambar/bg-form.jpg); background-repeat: no-repeat; background-size: cover;">
+      <Form></Form>
+</slot>
+</body>
+</html>
+<style>
+ 
+</style>
