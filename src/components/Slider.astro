@@ -25,7 +25,6 @@ import logo from '../gambar/logo.svg'
 
     h1,h2 {
         text-align: center;
-        font-weight: bold;
         margin:0;
         font-size: 30px;
     }
@@ -42,6 +41,7 @@ import logo from '../gambar/logo.svg'
 
     .slide {
         position: relative;
+        z-index:-1;
     }
 
     .sub {
@@ -50,7 +50,8 @@ import logo from '../gambar/logo.svg'
        display: flex;
        flex-direction: column;
        text-shadow: 2px 2px 3px #FF8011;
-       color: #fff;
+       color: #ffffff;
+       font-weight: bold;
        top: 50%;
        left: 50%;
        transform: translate(-50%, -50%); /* Center the text vertically and horizontally */

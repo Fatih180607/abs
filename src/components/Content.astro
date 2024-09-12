@@ -2,62 +2,73 @@
 import { Image } from 'astro:assets'
 import foto from "../gambar/5e965a8c69592.jpg"
 import coffe from "../gambar/white-coffe.jpg"
-import {supabase} from "../lib/supabase"
-const menu_img= "https://xlxckzgmuxkijtcjmvee.supabase.co/storage/v1/object/public/Menu_abs"
+import { supabase } from "../lib/supabase"
+const menu_img = "https://xlxckzgmuxkijtcjmvee.supabase.co/storage/v1/object/public/Menu_abs"
 const { data, error } = await supabase
   .from('menu')
   .select()
-
 ---
 
-  <ul id="menu-list">
-    {data.map((item) => (
-      <div class="menu item" data-category="minuman" data-name="White Coffe">
-      <li><Image src={menu_img+`/${item.type}/${item.id}.jpg`} alt='White Coffee' width="250" height="150"></Image></li>
+<ul id="menu-list">
+  {data.map((item) => (
+    <div class="menu item" data-category="minuman" data-name="White Coffee">
+      <li>
+        <Image src={menu_img + `/${item.type}/${item.id}.jpg`} alt='White Coffee' width="250" height="150" />
+      </li>
       <li>{item.name}</li>
       <li>{item.harga}</li>
       <div class="buy">
         <button class="btn">Buy Now</button>
       </div>
     </div>
-    ))}
-    
+  ))}
+</ul>
+
 <script src="../slider-buat-js/button.js"></script>
 <style>
   ul {
-    display: grid;
+    display: flex;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fill,minmax(min(100%,30ch),1fr));
-    place-items: center;
-    justify-items: center;
-    margin: 0;
-    padding: 0;
-    
+    overflow-x: auto;
+    padding: 1rem 0; /* Add vertical padding to ensure borders are visible */
+    list-style: none;
   }
+
+  ul::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  ul::-webkit-scrollbar-thumb {
+    background-color: #FF8011;
+    border-radius: 10px;
+  }
+
   li {
     list-style: none;
     color: #ffffff;
   }
 
-
-  .menu{
+  .menu {
+    min-width: 250px;
     outline: 2px solid #ffffff;
+    padding: 10px 0; 
+    flex-shrink: 0;
   }
 
   button {
     background-color: #FF8011;
-    border:none;
+    border: none;
     font-weight: 600;
     color: #ffffff;
     padding: 8px;
   }
 
-  .title{
+  .title {
     text-align: center;
-    margin:5px 0 3px 0;
+    margin: 5px 0 3px 0;
   }
 
-  .buy{
+  .buy {
     display: flex;
     flex-direction: column;
   }
