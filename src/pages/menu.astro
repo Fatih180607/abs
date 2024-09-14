@@ -3,6 +3,11 @@ import Fullmenu from "../components/Menu.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 export const prerender = false;
+
+import { supabase } from '../lib/supabase';
+const { data: { session } } = await supabase.auth.getSession();
+
+
 ---
 
 <!doctype html>

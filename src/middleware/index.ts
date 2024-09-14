@@ -1,9 +1,17 @@
-export function checkAuth({ cookies, redirect }) {
-  const accessToken = cookies.get("sb-access-token");
-  console.log(accessToken);
+import { supabase } from "../lib/supabase"; // pastikan ini adalah path yang sesuai
 
-  if (!accessToken) {
-    return redirect("/#");
+// Handle sign-in submission
+async function handleSignIn(event) {
+  event.preventDefault();
+  const email = event.target.email.value;
+  const password = event.target.password.value;
+
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
+
+  if (error) {
+    console.error("Error signing in:", error.message);
+  } else {
+    // Redirect to dashboard after successful login
+    window.location.href = "/#";
   }
-  return null;
 }
