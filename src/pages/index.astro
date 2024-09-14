@@ -78,4 +78,19 @@ export default Home
 		border-bottom: 3px solid #FF8011;
 	}
 
+	@media (min-width: 320px) and (max-width: 767px) {
+		.card-container{
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		.our h2 {
+			font-size: 16px;
+			max-width: 75ch;
+		}
+
+		.our a{
+			margin-right: 13px;
+		}
+}
+
 </style>

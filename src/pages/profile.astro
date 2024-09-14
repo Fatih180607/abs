@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Artisan Beverage</title>
+	</head>
+	<body>
+    <section class="container">
+    <div class="profile">
+    <h2>caritanya gambar</h2>
+    <ul>
+      <li>Nama</li>
+      <li>phone</li>
+      <li>address</li>
+    </ul>
+    <button>signout</button>
+    </div>
+    <div class="data">
+    <h3>ABOUT</h3>
+    <div class="input">
+      <label for="name">Nama panjang</label>
+      <input type="text" id="name" placeholder="Masukan nama" required>
+      <label for="phone">Enter a phone</label>
+      <input type="tel" id="phone" placeholder="Masukan NO" required>
+      <label for="address">Address</label>
+      <input type="text" id="address" placeholder="Masukan Alamat" required>
+      <button>save</button>
+    </div>
+  </div>
+    </section>
+</slot>
+</body>
+</html>
+
+<style>
+  body {
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  height: 100vh; /* Memastikan body mengambil seluruh tinggi layar */
+  display: flex;
+  justify-content: center; /* Menengahkan secara horizontal */
+  align-items: center; /* Menengahkan secara vertikal */
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: center;
+  }
+
+  .profile {
+    background-color: #36374d;
+    border: 1px solid purple;
+    border-radius:5px;
+    box-shadow: 5px 3px 8px 3px rgba(128, 0, 128, 0.5);
+    padding: 1rem;
+    width: 200px;
+
+  }
+
+ul {
+  padding: 0;
+}
+
+  li {
+    list-style: none;
+  }
+
+  .data {
+    background-color: #36374d;
+    border: 1px solid purple;
+    border-radius:5px;
+    box-shadow: 5px 3px 8px 3px rgba(128, 0, 128, 0.5);
+    padding: 1rem;
+    width: 500px;
+    height: 500px;
+  }
+
+  .input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .input label {
+    margin-top:10px;
+  }
+
+  .input input {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #fff;
+    margin-top: 10px;
+  }
+
+  .input button {
+    margin-top: 10px;
+  }
+</style>
