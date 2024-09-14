@@ -1,109 +1,150 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Artisan Beverage</title>
-	</head>
-	<body>
-    <section class="container">
-    <div class="profile">
-    <h2>caritanya gambar</h2>
-    <ul>
-      <li>Nama</li>
-      <li>phone</li>
-      <li>address</li>
-    </ul>
-    <button>signout</button>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="description" content="Account settings">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Beverage</title>
+  </head>
+  <body>
+    <div class="container light-style flex-grow-1 container-p-y">
+      <h4 class="font-weight-bold py-3 mb-4">PROFILE</h4>
+
+      <div class="card overflow-hidden">
+        <div class="row no-gutters row-bordered row-border-light">
+          <div class="col-md-3">
+            <div class="list-group list-group-flush account-settings-links">
+              <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
+            </div>
+          </div>
+
+          <div class="col-md-9">
+            <div class="tab-content">
+              <!-- General Tab -->
+              <div class="tab-pane fade active show" id="account-general">
+                <div class="card-body media align-items-center">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Avatar" class="d-block ui-w-80">
+                  <div class="media-body ml-4">
+                    <label class="btn btn-outline-primary mb-0">
+                      Upload new photo
+                      <input type="file" class="account-settings-fileinput">
+                    </label> 
+                    <button type="button" class="btn btn-default md-btn-flat">Reset</button>
+                    <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
+                  </div>
+                </div>
+
+                <hr class="border-light m-0">
+
+                <div class="card-body">
+                  <div class="form-group">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-control mb-1" value="Daffa" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" value="Andi Johan" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <input type="tel" class="form-control mb-1" value="0812-5314" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Adsress</label>
+                    <input type="text" class="form-control" value="Metland." required>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Additional Tabs omitted for brevity -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-right mt-3 d-flex justify-content-between  ">
+        <button type="button" class="btn btn-primary">signout</button>
+        <div class="d-flex">
+        <button type="button" class="btn btn-primary mr-3">Save changes</button>
+        <button type="button" class="btn btn-primary">Cancel</button>
+        </div>
+      </div>
     </div>
-    <div class="data">
-    <h3>ABOUT</h3>
-    <div class="input">
-      <label for="name">Nama panjang</label>
-      <input type="text" id="name" placeholder="Masukan nama" required>
-      <label for="phone">Enter a phone</label>
-      <input type="tel" id="phone" placeholder="Masukan NO" required>
-      <label for="address">Address</label>
-      <input type="text" id="address" placeholder="Masukan Alamat" required>
-      <button>save</button>
-    </div>
-  </div>
-    </section>
-</slot>
-</body>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
 
 <style>
   body {
-  background-color: #000;
-  color: #fff;
-  margin: 0;
-  height: 100vh; /* Memastikan body mengambil seluruh tinggi layar */
-  display: flex;
-  justify-content: center; /* Menengahkan secara horizontal */
-  align-items: center; /* Menengahkan secara vertikal */
+    background: #000;
+    margin-top: 20px;
   }
 
-  .container {
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
-    justify-content: center;
+  h4{
+    color:#FF8011;
   }
 
-  .profile {
-    background-color: #36374d;
-    border: 1px solid purple;
-    border-radius:5px;
-    box-shadow: 5px 3px 8px 3px rgba(128, 0, 128, 0.5);
-    padding: 1rem;
-    width: 200px;
-
+  .ui-w-80 {
+    width: 80px;
   }
 
-ul {
-  padding: 0;
-}
-
-  li {
-    list-style: none;
+  .btn-default {
+    border-color: #26B4FF;
+    color: #26B4FF; 
   }
 
-  .data {
-    background-color: #36374d;
-    border: 1px solid purple;
-    border-radius:5px;
-    box-shadow: 5px 3px 8px 3px rgba(128, 0, 128, 0.5);
-    padding: 1rem;
-    width: 500px;
-    height: 500px;
+  .btn-outline-primary {
+    border-color: #26B4FF;
+    color: #26B4FF;
   }
 
-  .input {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .btn-primary {
+    border: 2px solid purple;
+    box-shadow: 0 0 15px rgba(128, 0, 128, 0.5), 
+              0 0 25px rgba(128, 0, 128, 0.3), 
+              0 0 35px rgba(128, 0, 128, 0.2);
+    color:#ff;
+    background-color: #FF8011;
   }
 
-  .input label {
-    margin-top:10px;
+  .text-light {
+    color: #babbbc !important;
   }
 
-  .input input {
-    border: none;
-    background-color: transparent;
-    border-bottom: 1px solid #fff;
-    margin-top: 10px;
+  .card {
+    background-clip: padding-box;
+    background-color:rgb(53, 51, 51, 0.5);
+    box-shadow: 0 0 15px rgba(128, 0, 128, 0.5), 
+              0 0 25px rgba(128, 0, 128, 0.3), 
+              0 0 35px rgba(128, 0, 128, 0.2);
   }
 
-  .input button {
-    margin-top: 10px;
+  label {
+    color: #fff;
+  }
+
+  .account-settings-fileinput {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  .account-settings-links .list-group-item.active {
+    font-weight: bold !important;
+    background: transparent !important;
+    color: #fff !important;
   }
 </style>
