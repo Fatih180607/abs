@@ -1,7 +1,74 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Reward from "../components/vocher.astro";
+import Card from "../components/Card.astro";
+import Content from "../components/Content.astro";
+import Footer from "../components/Footer.astro";
 ---
 <Layout title="Artisan Beverage">
 <Reward></Reward>
+<div class="card-container">
+<Card>
+  <div class="content">
+    <p>caritanya gambar</p>
+    <p>tanggal vocher</p>
+    <button>gunakan</button>
+  </div>
+</Card>
+<Card>
+  <div class="content">
+    <p>caritanya gambar</p>
+    <p>tanggal vocher</p>
+    <button>gunakan</button>
+  </div>
+</Card>
+<Card>
+  <div class="content">
+    <p>caritanya gambar</p>
+    <p>tanggal vocher</p>
+    <button>gunakan</button>
+  </div>
+</Card>
+<Card>
+  <div class="content">
+    <p>caritanya gambar</p>
+    <p>tanggal vocher</p>
+    <button>gunakan</button>
+  </div>
+</Card>
+<Card>
+  <div class="content">
+    <p>caritanya gambar</p>
+    <p>tanggal vocher</p>
+    <button>gunakan</button>
+  </div>
+</Card>
+<Card>
+  <div class="content">
+    <p>caritanya gambar</p>
+    <p>tanggal vocher</p>
+    <button>gunakan</button>
+  </div>
+</Card>
+</div>
+<p>gunakan vocher, raih minumana,makanana yang kamu mau!!</p>
+<Content></Content>
+<Footer></Footer>
 </Layout>
+
+<style>
+  p {
+    color:#fff;
+    margin-left: 1rem;
+    font-size:18px;
+  }
+  .card-container{
+		margin: 4rem 1rem 0 1rem;
+		padding-bottom: 4rem;
+		display:grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+		z-index:2;
+	}
+
+</style>
