@@ -32,3 +32,39 @@ document.addEventListener("DOMContentLoaded", () => {
 //     arrow.style.boxShadow = "none";
 //   }
 // });
+
+// Ambil elemen dropdown dan menu list
+const dropdownItems = document.querySelectorAll(".dropdown-content a");
+const menuItems = document.querySelectorAll(".menu");
+
+// Event listener untuk setiap filter di dropdown
+dropdownItems.forEach((item) => {
+  item.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    // Ambil kategori dari atribut data-filter
+    const filterCategory = item.getAttribute("data-filter");
+
+    // Tampilkan atau sembunyikan item berdasarkan kategori
+    menuItems.forEach((menuItem) => {
+      const itemCategory = menuItem.getAttribute("data-category");
+
+      if (filterCategory === "all" || itemCategory === filterCategory) {
+        menuItem.style.display = "block"; // Tampilkan item
+      } else {
+        menuItem.style.display = "none"; // Sembunyikan item
+      }
+    });
+  });
+});
+
+//cart shooping
+
+document.addEventListener("DOMContentLoaded", () => {
+  const addToCartButtons = document.querySelectorAll(".add-to-card");
+  const cardItemCount = document.querySelector(".add-to-card");
+  const cardItemsList = document.querySelector(".card-items");
+  const cardTotal = document.querySelector(".cart-total");
+  const cardIcon = document.querySelector(".cart-icon");
+  const sidebar = document.querySelector(".sidevar");
+});

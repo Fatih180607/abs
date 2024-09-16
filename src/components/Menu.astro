@@ -27,6 +27,7 @@ const params = new URL(Astro.request.url)
   menu=data
   }
 ---
+
 <div class="cover">
   <div class="cover-overlay">
   <h1>Quick Bite</h1>
@@ -65,11 +66,89 @@ const params = new URL(Astro.request.url)
     </div>
   </div>
   ))}
-  
-</ul>
+  </ul>
+  <!-- sidebar -->
+  <div class="sidevar" id="sidevar">
+    <div class="sidebar-close">
+      <i class="fa-solid fa-xmark fa-xl" style="color: #000;"></i>
+      </div>
+      <div class="cart-menu">
+        <h3>MY .cart-shooping</h3>
+        <div class="card-items">test1</div>
+      </div>
+   
+    
+    <div class="sidebar--footer">
+      <div class="total--amount">
+        <h5>total</h5>
+        <div class="cart total">$0.00</div>
+      </div>
+      <button class="checkout-btn">checkout</button>
+    </div>
+  </div>
 <p id="no-results" style="display:none; text-align:center; color:#fff;">Item tidak ditemukan</p>
 <style>
+/* card sidebar */
+.sidevar {
+  width: 300px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  /* right: 0; */
+  right:-350px;
+  background-color:#fff;
+  transition: right 0.3 ease-in-out;
+  z-index:9999;
+  padding: 20px;
+}
 
+.sidebar-open {
+  right: 0;
+}
+
+.sidebar-close {
+  position: absolute;
+  right: 20px;
+  top:10px;
+  cursor: pointer;
+}
+
+.card-items {
+  display: flex; 
+  justify-content: space-between;
+  padding: 10px 5px;
+  border-radius: 5px;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 1rem;
+  border: 1px solid #000;
+}
+
+.sidebar--footer{
+  position: absolute;
+  bottom:50px;
+  width: 88%;
+}
+
+.total--amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #000;
+  border-radius:5px;
+  padding: 5px 5px;
+}
+
+.checkout-btn {
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+/* jagan di ganggu */
 .cover {
   background-image: url('/src/gambar/cover.jpg');
   background-size:cover;
@@ -77,7 +156,6 @@ const params = new URL(Astro.request.url)
   border-radius: 10px;
   margin: 2rem 1rem 2rem 1rem ;
   color:#fff;
-  box-shadow: ;
 }
 
 .cover-overlay {
