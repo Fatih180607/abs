@@ -48,7 +48,7 @@ const params = new URL(Astro.request.url)
       <a href="#" data-filter="roti">Roti</a>
     </div>
   </div>
-  <button><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i></button>
+  <button class="card-shopping"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i></button>
 </div>
 
 </form>
@@ -70,10 +70,10 @@ const params = new URL(Astro.request.url)
   <!-- sidebar -->
   <div class="sidevar" id="sidevar">
     <div class="sidebar-close">
-      <i class="fa-solid fa-xmark fa-xl" style="color: #000;"></i>
+      <i class="fa-solid fa-xmark fa-xl" style="color: #fff;"></i>
       </div>
       <div class="cart-menu">
-        <h3>MY .cart-shooping</h3>
+        <h3>MY Cart-Shooping</h3>
         <div class="card-items">test1</div>
       </div>
    
@@ -89,6 +89,10 @@ const params = new URL(Astro.request.url)
 <p id="no-results" style="display:none; text-align:center; color:#fff;">Item tidak ditemukan</p>
 <style>
 /* card sidebar */
+.card-shopping {
+  cursor: pointer;
+}
+
 .sidevar {
   width: 300px;
   height: 100%;
@@ -96,10 +100,14 @@ const params = new URL(Astro.request.url)
   top: 0;
   /* right: 0; */
   right:-350px;
-  background-color:#fff;
+  background-color:rgba(45, 45, 45, 1);
+  box-shadow: -3px 0 3px rgba(67, 48, 108, 0.7) ;
+  color:#fff;
   transition: right 0.3 ease-in-out;
   z-index:9999;
   padding: 20px;
+  border-top-left-radius: 20px;
+  border-buttom-left-radius: 20px;
 }
 
 .sidebar-open {
@@ -109,8 +117,11 @@ const params = new URL(Astro.request.url)
 .sidebar-close {
   position: absolute;
   right: 20px;
-  top:10px;
   cursor: pointer;
+}
+
+.cart-menu h3 {
+  margin: 0;
 }
 
 .card-items {
@@ -121,7 +132,10 @@ const params = new URL(Astro.request.url)
   flex-direction: column;
   gap: 10px;
   margin-top: 1rem;
-  border: 1px solid #000;
+  border: 1px solid purple;
+  box-shadow: 0 0 15px rgba(128, 0, 128, 0.5), 
+              0 0 25px rgba(128, 0, 128, 0.3), 
+              0 0 35px rgba(128, 0, 128, 0.2);
 }
 
 .sidebar--footer{
@@ -134,7 +148,10 @@ const params = new URL(Astro.request.url)
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 2px solid #000;
+  border: 2px solid purple;
+  box-shadow: 0 0 15px rgba(128, 0, 128, 0.5), 
+              0 0 25px rgba(128, 0, 128, 0.3), 
+              0 0 35px rgba(128, 0, 128, 0.2);
   border-radius:5px;
   padding: 5px 5px;
 }

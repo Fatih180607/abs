@@ -59,12 +59,31 @@ dropdownItems.forEach((item) => {
 });
 
 //cart shooping
-
 document.addEventListener("DOMContentLoaded", () => {
-  const addToCartButtons = document.querySelectorAll(".add-to-card");
-  const cardItemCount = document.querySelector(".add-to-card");
-  const cardItemsList = document.querySelector(".card-items");
-  const cardTotal = document.querySelector(".cart-total");
-  const cardIcon = document.querySelector(".cart-icon");
-  const sidebar = document.querySelector(".sidevar");
+  // Select the cart shop button and sidebar elements
+  const cartButton = document.querySelector(".fa-cart-shopping");
+  const sidebar = document.getElementById("sidevar");
+  const sidebarClose = document.querySelector(".sidebar-close");
+
+  // Function to open the sidebar
+  const openSidebar = () => {
+    sidebar.classList.add("sidebar-open");
+  };
+
+  // Function to close the sidebar
+  const closeSidebar = () => {
+    sidebar.classList.remove("sidebar-open");
+  };
+
+  // Event listener for the cart shop button click
+  cartButton.addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent default behavior of the button
+    openSidebar();
+  });
+
+  // Event listener for the sidebar close button
+  sidebarClose.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeSidebar();
+  });
 });
