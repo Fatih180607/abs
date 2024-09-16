@@ -59,7 +59,7 @@ const params = new URL(Astro.request.url)
     <li>{item.name}</li>
     <div class="cart-shooping">
     <li>{item.harga}</li>
-    <button><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
+    <button class="cart-shop"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
     </div>
     <div class="buy">
       <button class="btn">Buy Now</button>
@@ -81,7 +81,7 @@ const params = new URL(Astro.request.url)
     <div class="sidebar--footer">
       <div class="total--amount">
         <h5>total</h5>
-        <div class="cart total">$0.00</div>
+        <div class="cart-total">$0.00</div>
       </div>
       <button class="checkout-btn">checkout</button>
     </div>
@@ -103,6 +103,7 @@ const params = new URL(Astro.request.url)
   background-color:rgba(45, 45, 45, 1);
   box-shadow: -3px 0 3px rgba(67, 48, 108, 0.7) ;
   color:#fff;
+  text-transform: capitalize;
   transition: right 0.3 ease-in-out;
   z-index:9999;
   padding: 20px;
@@ -138,6 +139,11 @@ const params = new URL(Astro.request.url)
               0 0 35px rgba(128, 0, 128, 0.2);
 }
 
+.cart-total {
+  color: #aaaaaa;
+  font-weight: 600;
+}
+
 .sidebar--footer{
   position: absolute;
   bottom:50px;
@@ -153,7 +159,14 @@ const params = new URL(Astro.request.url)
               0 0 25px rgba(128, 0, 128, 0.3), 
               0 0 35px rgba(128, 0, 128, 0.2);
   border-radius:5px;
-  padding: 5px 5px;
+  padding: 15px 5px;
+}
+
+h5 {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin:0;
 }
 
 .checkout-btn {

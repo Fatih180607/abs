@@ -64,6 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartButton = document.querySelector(".fa-cart-shopping");
   const sidebar = document.getElementById("sidevar");
   const sidebarClose = document.querySelector(".sidebar-close");
+  const itemName = document.querySelector("item.name");
+  const cardShop = document.querySelector("cart-shop");
 
   // Function to open the sidebar
   const openSidebar = () => {
@@ -86,4 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     closeSidebar();
   });
+
+  // cardShop.addEventListener("click", (e) => {
+  //   console.log("berhasil");
+  // });
 });
