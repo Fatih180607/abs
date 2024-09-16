@@ -27,24 +27,39 @@ const params = new URL(Astro.request.url)
   menu=data
   }
 ---
+<div class="cover">
+  <div class="cover-overlay">
+  <h1>Quick Bite</h1>
+  <span>Where Taste Takes the Fast Lane</span>
+  </div>
+</div>
 <form class="filter" method="get">
-  <input type="search" id="search" name="search" placeholder="Search...">
-  <input type="submit">
+  <div>
+  <input type="search" id="search" name="search" placeholder="Search..." class="search">
+  <input type="submit" class="submit">
+  </div>
+  <div class="button">
   <div class="dropdown">
-    <button class="dropdown-btn"><i class="fa-solid fa-filter"></i> Filter</button>
+    <button class="dropdown-btn"><i class="fa-solid fa-filter fa-2xl" style="color: #ffffff;"></i> Filter</button>
     <div class="dropdown-content">
       <a href="#" data-filter="makanan">Makanan</a>
       <a href="#" data-filter="minuman">Minuman</a>
       <a href="#" data-filter="roti">Roti</a>
     </div>
   </div>
+  <button><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i></button>
+</div>
+
 </form>
 <ul id="menu-list">
   {menu.map((item) => (
     <div class="menu item" data-category="minuman" data-name="White Coffe">
     <li><Image src={menu_img+`/${item.type}/${item.id}.jpg`} alt='White Coffee' width="250" height="150"></Image></li>
     <li>{item.name}</li>
+    <div class="cart-shooping">
     <li>{item.harga}</li>
+    <button><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
+    </div>
     <div class="buy">
       <button class="btn">Buy Now</button>
     </div>
@@ -54,12 +69,95 @@ const params = new URL(Astro.request.url)
 </ul>
 <p id="no-results" style="display:none; text-align:center; color:#fff;">Item tidak ditemukan</p>
 <style>
+
+.cover {
+  background-image: url('/src/gambar/cover.jpg');
+  background-size:cover;
+  height:62vh;
+  border-radius: 10px;
+  margin: 2rem 1rem 2rem 1rem ;
+  color:#fff;
+  box-shadow: ;
+}
+
+.cover-overlay {
+  background: rgba(0,0,0,0.6);
+  box-shadow: 1px 1px 8px 2px #43306c;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+h1 {
+  margin:0;
+}
+
 .filter {
   margin: 2rem 0 2rem 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(45, 45, 45, 0.75);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 8px 2px #43306c;
+
+}
+
+.search {
+  background-color:rgba(54, 55, 77, 0.5) ;
+  border: 2px solid #43306c;
+  border-radius: 5px;
+  color:#fff;
+  padding: 7px;
+  width: 300px;
+}
+
+.submit {
+  background-color:rgba(54, 55, 77, 0.5) ;
+  border: 2px solid #43306c;
+  border-radius: 5px;
+  padding: 7px;
+  color:#fff;
+}
+
+input:focus{
+  outline: 1px solid purple;
+  border: none;
+  box-shadow: 0 0 15px rgba(128, 0, 128, 0.5), 
+              0 0 25px rgba(128, 0, 128, 0.3), 
+              0 0 35px rgba(128, 0, 128, 0.2);
+}
+
+.button {
+ display: flex;
+ justify-content: end;
+ gap:1rem;
+ margin-right: 1rem;
+}
+
+.button button {
+  background-color: transparent;
+  border:2px solid purple ;
+  box-shadow: 0 0 15px rgba(128, 0, 128, 0.5), 
+              0 0 25px rgba(128, 0, 128, 0.3), 
+              0 0 35px rgba(128, 0, 128, 0.2);
 }
 
 .fa-filter{
   margin-left: 10px;
+}
+
+.dropdown button {
+  color:#fff;
+  border:2px solid purple ;
+  box-shadow: 0 0 15px rgba(128, 0, 128, 0.5), 
+              0 0 25px rgba(128, 0, 128, 0.3), 
+              0 0 35px rgba(128, 0, 128, 0.2);
+
 }
 
 
@@ -101,7 +199,6 @@ const params = new URL(Astro.request.url)
     display: block;
 }
 
-
 ul {
   display: grid;
   gap: 2rem;
@@ -122,6 +219,20 @@ li {
   outline: 2px solid #ffffff;
 }
 
+.cart-shooping {
+  display: flex;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  justify-content: space-between;
+}
+
+.cart-shooping button {
+  border: 2px solid #fff;
+  width: 35px;
+  border-radius: 100%;
+  background-color: transparent;
+}
+
 button {
   background-color: #FF8011;
   border: none;
@@ -140,3 +251,5 @@ button {
   flex-direction: column;
 }
 </style>
+
+<script src="../slider-buat-js/components.js"></script>
