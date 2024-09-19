@@ -82,7 +82,7 @@ const params = new URL(Astro.request.url)
     <div class="sidebar--footer">
       <div class="total--amount">
         <h5>total</h5>
-        <div class="cart-total">$0.00</div>
+        <div class="cart-total">RP</div>
       </div>
       <button class="checkout-btn">checkout</button>
     </div>
@@ -90,6 +90,9 @@ const params = new URL(Astro.request.url)
 <p id="no-results" style="display:none; text-align:center; color:#fff;">Item tidak ditemukan</p>
 <style>
 /* card sidebar */
+.button delete {
+  padding: 0;
+}
 .card-shopping {
   cursor: pointer;
 }
@@ -105,12 +108,13 @@ const params = new URL(Astro.request.url)
   box-shadow: -3px 0 3px rgba(67, 48, 108, 0.7) ;
   color:#fff;
   text-transform: capitalize;
-  transition: right 0.3 ease-in-out;
+  transition:right 0.3 ease-in-out;
   z-index:9999;
   padding: 20px;
   border-top-left-radius: 20px;
-  border-buttom-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
+
 
 .sidebar-open {
   right: 0;

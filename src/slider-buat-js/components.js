@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cartItem.innerHTML = `
           <div class="item-name">${itemName}</div>
           <div class="item-price">${itemPrice}</div>
+          <button class="delete"><i class="fa-solid fa-xmark" style="background-color: #FF8011; color:#fff; outline:none;"></i></button>
         `;
 
         // Append the new cart item to the cart items container
@@ -118,8 +119,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Optionally, update the total amount in the cart
       updateCartTotal();
+
+      // Attach delete event listener for the new item
+      attachDeleteEventListeners();
     });
   });
+
+  function attachDeleteEventListeners() {
+    const deleteButtons = document.querySelectorAll(".delete");
+
+    deleteButtons.forEach((deleteButton) => {
+      deleteButton.addEventListener("click", function (event) {
+        const cartItem = event.target.closest(".cart-item");
+        const itemName = cartItem.getAttribute("data-name");
+
+        // Remove the item from the cart object
+        delete cart[itemName];
+
+        // Remove the item from the UI
+        cartItem.remove();
+
+        // Save the updated cart to localStorage
+        saveCartToStorage();
+
+        // Update the total amount in the cart
+        updateCartTotal();
+      });
+    });
+  }
 
   // Function to update the total cart amount
   function updateCartTotal() {
@@ -133,7 +160,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Update the total amount in the cart display
-    document.querySelector(".cart-total").textContent = `$${total.toFixed(2)}`;
+    document.querySelector(".cart-total").textContent = `RP ${total.toFixed(
+      2
+    )}`;
   }
 
   // Function to save the cart data to localStorage
@@ -154,11 +183,18 @@ document.addEventListener("DOMContentLoaded", () => {
       cartItem.innerHTML = `
         <div class="item-name">${itemName} (${cart[itemName].quantity})</div>
         <div class="item-price">${cart[itemName].price}</div>
+        <button class="delete"><i class="fa-solid fa-xmark" style="color: #fff;"></i></button>
       `;
       cartItemsContainer.appendChild(cartItem);
     }
 
+    // Attach delete event listeners after loading the cart
+    attachDeleteEventListeners();
+
     // Update the cart total
     updateCartTotal();
   }
+
+  // Initial call to attach delete event listeners
+  attachDeleteEventListeners();
 });
