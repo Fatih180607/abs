@@ -4,10 +4,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 export const prerender = false;
 
-import { supabase } from '../lib/supabase';
-const { data: { session } } = await supabase.auth.getSession();
-
-
+const {user} = Astro.locals
 ---
 
 <!doctype html>
@@ -27,6 +24,9 @@ const { data: { session } } = await supabase.auth.getSession();
 	<body>
     <main>
     <Navbar></Navbar>
+      <span>
+      {user.email}
+      </span>
     <Fullmenu></Fullmenu>
     </main>
     <Footer></Footer>
@@ -49,6 +49,9 @@ main {
     flex: 1;
 }
 
+  span {
+    color: white;
+  }
 </style>
 
 	</body>

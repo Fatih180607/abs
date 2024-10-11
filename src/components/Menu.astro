@@ -9,7 +9,6 @@ let menu = []
 const menu_img= "https://xlxckzgmuxkijtcjmvee.supabase.co/storage/v1/object/public/Menu_abs"
 const params = new URL(Astro.request.url)
   .searchParams;
-  console.log (params.get("search"));
   const seacrh_term = params.get("search") ||"";
 
   if ( seacrh_term.length===0){
