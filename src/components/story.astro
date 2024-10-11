@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets'
+import ikon from "../gambar/ikon.png"
+---
+<section>
+  <div class="about">
+  <img src="/src/gambar/ikon.png" alt="ikon" width="400" height="400" class="image-shadow"></img>
+  <div class="story">
+  <h1>Our Story</h1>
+  <p>Kopi adalah minuman yang telah menjadi bagian integral dari kehidupan sehari-hari banyak orang di seluruh dunia. Dengan berbagai varian dan metode penyeduhan, kopi menawarkan pengalaman rasa yang beragam, mulai dari yang lembut dan creamy hingga yang kuat dan penuh cita rasa. Biji kopi, yang berasal dari berbagai wilayah di dunia, membawa karakteristik unik tergantung dari tempat tumbuhnya. Misalnya, kopi dari Amerika Selatan sering kali memiliki rasa yang ringan dan asam, sedangkan kopi dari Afrika mungkin menawarkan rasa yang lebih kompleks dengan aroma buah-buahan dan bunga. Setiap tegukan kopi adalah kesempatan untuk menikmati kehangatan, aroma, dan kenikmatan yang menenangkan.</p>
+  <p>Selain rasa yang memikat, kopi juga dikenal karena efeknya yang menyegarkan dan memberikan energi. Kandungan kafein dalam kopi membantu meningkatkan kewaspadaan dan fokus, menjadikannya pilihan minuman populer untuk memulai hari atau menjaga semangat di tengah kesibukan. Namun, kopi bukan hanya tentang kafein; ini juga tentang pengalaman sosial. Banyak orang menikmati kopi di kafe bersama teman atau saat momen santai, menjadikannya lebih dari sekadar minuman—tetapi sebuah ritual yang menghubungkan orang dan budaya. Baik dinikmati sendiri dalam keheningan pagi atau bersama dalam kebersamaan, kopi selalu menghadirkan kehangatan dan kebahagiaan.</p>
+  </div>
+  </div>
+</section>
+
+<style>
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 9rem;
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  max-width: 75ch;
+}
+
+h1 {
+  font-size: 36px;
+  color: #fff;
+}
+
+p {
+  font-size: 20px;
+  color: #fff;
+}
+
+.image-shadow {
+  filter: drop-shadow(8px 8px 10px #dcf8ff);
+} 
+
+@media (min-width: 320px) and (max-width: 900px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about img {
+    margin-top: 1rem;
+  }
+}
+
+</style>

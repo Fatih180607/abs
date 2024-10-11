@@ -1,0 +1,117 @@
+---
+import { Image } from 'astro:assets'
+import gambar from "../gambar/fresh-coffee-steams-wooden-table-close-up-generative-ai_188544-8923.avif"
+import biji from "../gambar/biji_kopi.jpg"
+import coffe from "../gambar/white-coffe.jpg"
+import logo from '../gambar/logo.svg'
+---
+
+<section class="slide">
+    <div class="image">
+        <img class="mySlides fade" src="https://xlxckzgmuxkijtcjmvee.supabase.co/storage/v1/object/public/Menu_abs/poster/coffee-shop-.jpeg" alt='logo abs' width="100%" height="450">
+        <img class="mySlides fade" src="https://xlxckzgmuxkijtcjmvee.supabase.co/storage/v1/object/public/Menu_abs/poster/balkon.jpg" alt='logo abs' width="100%" height="450">
+        <div class="sub">
+        <h1>Welcome to</h1>
+        <h2>Artisan Beverage Studio</h2>
+    </div>
+    </div>
+    
+</section>
+
+
+<script src="../slider-buat-js/slider.js"></script>
+
+<style>
+
+    h1,h2 {
+        text-align: center;
+        margin:0;
+        font-size: 30px;
+    }
+    .mySlides {
+        z-index: 1;
+        filter:blur(3px);
+        animation: fade 1.5s;
+
+    }
+
+    @keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+    .slide {
+        position: relative;
+        z-index:-1;
+    }
+
+    .sub {
+       position: absolute;
+       z-index: 2;
+       display: flex;
+       flex-direction: column;
+       text-shadow: 2px 2px 3px #FF8011;
+       color: #ffffff;
+       font-weight: bold;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%); /* Center the text vertically and horizontally */
+    }
+
+    .image{
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    .curent {
+        margin-top: 1rem;
+    }
+
+    .buttons{
+      font-size: 30px;
+      color:white;
+    }
+
+    .slide-button {
+        position: absolute;
+        background-color: #FF8011;
+        top: 30%;
+        padding: 1%;
+        transition: 0.5 ease;
+    }
+
+    .next {
+        right: 0;
+    }
+
+    .slide-button:hover{
+        cursor: pointer;
+    }
+
+    .dots {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .mySlides{
+        height: 300px;
+    }
+}
+</style>

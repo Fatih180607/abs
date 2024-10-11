@@ -1,0 +1,101 @@
+---
+import { Image } from 'astro:assets'
+import Bg from "../gambar/post-form.jpg"
+---
+<section class="main-section max-w-4xl mx-auto">
+  <!-- <Image src={Cat} alt='logo abs'></Image> -->
+  <div class="heading">
+  <h1>Welcome</h1>
+  </div>
+  <div class="header">
+ <img src="/src/gambar/post-form.jpg" alt="poster" class="poster">
+  <form class="login" action="api/auth/register" method="POST">
+    <label for="email">email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="youremail@gmail.com"
+      required
+    />
+    <label for="name">Password</label>
+    <input
+      type="password"
+      id="email"
+      name="password"
+      placeholder="your super secret password"
+      required
+    />
+    <button>submit</button>
+    <p>Already have an account? <a href="/sign">sign in instead</a></p>
+  </form>
+  </div>
+</section>
+
+<style>
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.heading p,h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.heading p {
+  font-weight: 400;
+  color: #ffffff;
+}
+
+h1 {
+  color:#FF8011;
+  text-shadow: 1px 1px 2px #d2cfcf;
+  font-weight: 600;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.poster {
+  width: 450px;
+  height: 500px;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+  padding: 3rem;
+  background-color: #ffffff;
+  border: 2px solid black;
+  box-shadow: 1px 4px 8px 1px;
+}
+
+.login input {
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.login label {
+  margin-top: 1rem;
+}
+
+.login button {
+  margin-top: 1rem;
+  padding: 3px;
+  background-color: #FF8011;
+  color: #ffffff;
+  font-weight: 500;
+  border: 1px solid black;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.6));
+}
+</style>
+  

@@ -1,0 +1,377 @@
+---
+import { Image } from 'astro:assets'
+import coffe from "../gambar/white-coffe.jpg"
+import spageti from "../gambar/spageti.jpg"
+import rotbak from "../gambar/roti.jpg"
+import {supabase} from "../lib/supabase"
+let menu = []
+  
+const menu_img= "https://xlxckzgmuxkijtcjmvee.supabase.co/storage/v1/object/public/Menu_abs"
+const params = new URL(Astro.request.url)
+  .searchParams;
+  console.log (params.get("search"));
+  const seacrh_term = params.get("search") ||"";
+
+  if ( seacrh_term.length===0){
+    const { data, error } = await supabase
+    .from('menu')
+    .select()
+    menu=data
+  }
+  else {
+    const { data, error } = await supabase
+  .from('menu')
+  .select()
+  .textSearch("name", seacrh_term, {
+  });
+  menu=data
+  }
+---
+
+<div class="cover">
+  <div class="cover-overlay">
+  <h1>Quick Bite</h1>
+  <span>Where Taste Takes the Fast Lane</span>
+  </div>
+</div>
+<form class="filter" method="get">
+  <div>
+  <input type="search" id="search" name="search" placeholder="Search..." class="search">
+  <input type="submit" class="submit">
+  </div>
+  <div class="button">
+  <div class="dropdown">
+    <button class="dropdown-btn"><i class="fa-solid fa-filter fa-2xl" style="color: #ffffff;"></i> Filter</button>
+    <div class="dropdown-content">
+      <a href="#" data-filter="makanan">Makanan</a>
+      <a href="#" data-filter="minuman">Minuman</a>
+      <a href="#" data-filter="roti">Roti</a>
+    </div>
+  </div>
+  <button class="card-shopping"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i></button>
+</div>
+
+</form>
+<ul id="menu-list">
+  {menu.map((item) => (
+    <div class="menu item" data-category="minuman" data-name="White Coffe">
+    <li><Image src={menu_img+`/${item.type}/${item.id}.jpg`} alt='White Coffee' width="250" height="150"></Image></li>
+    <li>{item.name}</li>
+    <div class="cart-shooping">
+    <li>{item.harga}</li>
+    <button class="cart-shop"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
+    </div>
+    <div class="buy">
+      <button class="btn">Buy Now</button>
+    </div>
+  </div>
+  ))}
+  </ul>
+  <!-- sidebar -->
+  <div class="sidevar" id="sidevar">
+    <div class="sidebar-close">
+      <i class="fa-solid fa-xmark fa-xl" style="color: #fff;"></i>
+      </div>
+      <div class="cart-menu">
+        <h3>MY Cart-Shooping</h3>
+        <div class="card-items">nama item
+        </div>
+      </div>
+   
+    
+    <div class="sidebar--footer">
+      <div class="total--amount">
+        <h5>total</h5>
+        <div class="cart-total">RP</div>
+      </div>
+      <button class="checkout-btn">checkout</button>
+    </div>
+  </div>
+<p id="no-results" style="display:none; text-align:center; color:#fff;">Item tidak ditemukan</p>
+<style>
+/* card sidebar */
+.button delete {
+  padding: 0;
+}
+.card-shopping {
+  cursor: pointer;
+}
+
+.sidevar {
+  width: 300px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  /* right: 0; */
+  right:-350px;
+  background-color:rgba(45, 45, 45, 1);
+  box-shadow: -3px 0 3px rgba(67, 48, 108, 0.7) ;
+  color:#fff;
+  text-transform: capitalize;
+  transition:right 0.3 ease-in-out;
+  z-index:9999;
+  padding: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+
+.sidebar-open {
+  right: 0;
+}
+
+.sidebar-close {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.cart-menu h3 {
+  margin: 0;
+}
+
+.card-items {
+  display: flex; 
+  justify-content: space-between;
+  padding: 10px 5px;
+  border-radius: 5px;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 1rem;
+  border: 1px solid purple;
+  box-shadow: 0 0 15px rgba(128, 0, 128, 0.5), 
+              0 0 25px rgba(128, 0, 128, 0.3), 
+              0 0 35px rgba(128, 0, 128, 0.2);
+}
+
+.cart-total {
+  color: #aaaaaa;
+  font-weight: 600;
+}
+
+.cart-shop {
+  cursor: pointer;
+}
+
+.sidebar--footer{
+  position: absolute;
+  bottom:50px;
+  width: 88%;
+}
+
+.total--amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid purple;
+  box-shadow: 0 0 15px rgba(128, 0, 128, 0.5), 
+              0 0 25px rgba(128, 0, 128, 0.3), 
+              0 0 35px rgba(128, 0, 128, 0.2);
+  border-radius:5px;
+  padding: 15px 5px;
+}
+
+h5 {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin:0;
+}
+
+.checkout-btn {
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+/* jagan di ganggu */
+.cover {
+  background-image: url('/src/gambar/cover.jpg');
+  background-size:cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index:1;
+  height:62vh;
+  border-radius: 10px;
+  margin: 2rem 1rem 2rem 1rem ;
+  color:#fff;
+}
+
+.cover-overlay {
+  background: rgba(0,0,0,0.6);
+  box-shadow: 1px 1px 8px 2px #43306c;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  z-index: 3;
+}
+
+h1 {
+  margin:0;
+}
+
+.filter {
+  margin: 2rem 0 2rem 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(45, 45, 45, 0.75);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 8px 2px #43306c;
+
+}
+
+.search {
+  background-color:rgba(54, 55, 77, 0.5) ;
+  border: 2px solid #43306c;
+  border-radius: 5px;
+  color:#fff;
+  padding: 7px;
+  width: 300px;
+}
+
+.submit {
+  background-color:rgba(54, 55, 77, 0.5) ;
+  border: 2px solid #43306c;
+  border-radius: 5px;
+  padding: 7px;
+  color:#fff;
+}
+
+input:focus{
+  outline: 1px solid purple;
+  border: none;
+  box-shadow: 0 0 15px rgba(128, 0, 128, 0.5), 
+              0 0 25px rgba(128, 0, 128, 0.3), 
+              0 0 35px rgba(128, 0, 128, 0.2);
+}
+
+.button {
+ display: flex;
+ justify-content: end;
+ gap:1rem;
+ margin-right: 1rem;
+}
+
+.button button {
+  background-color: transparent;
+  border:2px solid purple ;
+  box-shadow: 0 0 15px rgba(128, 0, 128, 0.5), 
+              0 0 25px rgba(128, 0, 128, 0.3), 
+              0 0 35px rgba(128, 0, 128, 0.2);
+}
+
+.fa-filter{
+  margin-left: 10px;
+}
+
+.dropdown button {
+  color:#fff;
+  border:2px solid purple ;
+  box-shadow: 0 0 15px rgba(128, 0, 128, 0.5), 
+              0 0 25px rgba(128, 0, 128, 0.3), 
+              0 0 35px rgba(128, 0, 128, 0.2);
+
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background-color: transparent; 
+    color: black;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+ul {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 30ch), 1fr));
+  place-items: center;
+  justify-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  color:#fff;
+  padding: 5px;
+}
+
+.menu {
+  outline: 2px solid #ffffff;
+}
+
+.cart-shooping {
+  display: flex;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  justify-content: space-between;
+}
+
+.cart-shooping button {
+  border: 2px solid #fff;
+  width: 35px;
+  border-radius: 100%;
+  background-color: transparent;
+}
+
+button {
+  background-color: #FF8011;
+  border: none;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 8px;
+}
+
+.title {
+  text-align: center;
+  margin: 5px 0 3px 0;
+}
+
+.buy {
+  display: flex;
+  flex-direction: column;
+}
+</style>
+
+<script src="../slider-buat-js/components.js"></script>
