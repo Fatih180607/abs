@@ -10,7 +10,7 @@ const { data, error } = await supabase
 ---
 
 <ul id="menu-list">
-  {data.map((item) => (
+  {data && data.map((item) => (
     <div class="menu item" data-category="minuman" data-name="White Coffee">
       <li>
         <Image src={menu_img + `/${item.type}/${item.id}.jpg`} alt='White Coffee' width="250" height="150" />
